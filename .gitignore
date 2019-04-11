@@ -1,0 +1,12 @@
+# Environments
+bin/
+include/
+lib/
+.Python
+# Byte-compiled / optimized / DLL files
+__pycache__/
+my_app/__pycache__/
+board_app/__pycache__/
+messageboard/__pychache__/
+# Other
+.DS_Store
