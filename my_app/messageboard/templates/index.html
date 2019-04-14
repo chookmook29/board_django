@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<h1>Homepage</h1>
+	
+	{% if all_messages %}
+		{% for message in all_messages %}
+			<p>{{ message.text }}</p>
+			<p>{{ message.author }}</p>
+		{% endfor %}
+	{% endif %}
+
 {% endblock %}
-
-
