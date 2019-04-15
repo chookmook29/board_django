@@ -5,6 +5,9 @@ h1 {
 	font-family: Arial;
 	color: white;
 }
-p {
+p,a {
+	color: white;
+}
+button {
 	color: white;
 }
