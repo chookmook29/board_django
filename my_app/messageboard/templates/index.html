@@ -2,11 +2,5 @@
 
 {% block content %}
 	<a href="{% url 'login' %}">Login</a>
-	{% if all_messages %}
-		{% for message in all_messages %}
-			<p>{{ message.text }}</p>
-			<p>{{ message.author }}</p>
-		{% endfor %}
-	{% endif %}
 
 {% endblock %}

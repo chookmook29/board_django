@@ -2,9 +2,10 @@
 
 {% block content %}
 <p>login</p>
-<form>
+<form method="POST">
+	{% csrf_token %}
   <div>
-    <input type="email" placeholder="email@example.com" name="username">
+    <input type="text" placeholder="email@example.com" name="username">
   </div>
   <div>
     <input type="password" placeholder="Password" name="password">

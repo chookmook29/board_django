@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	{% if all_messages %}
+		{% for message in all_messages %}
+			<p>{{ message.text }}</p>
+			<p>{{ message.author }}</p>
+		{% endfor %}
+	{% endif %}
+
+{% endblock %}
