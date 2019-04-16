@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .models import Message
+from django.contrib import messages
 
 def home(request):
 	return render(request, 'index.html', {})
@@ -15,6 +16,7 @@ def login_user(request):
 			login(request, user)
 			return redirect('main')
 		else:
+			messages.success(request, ('Wrong username or password'))
 			return redirect('login')
 	else:
 		return render(request, 'login.html', {})
