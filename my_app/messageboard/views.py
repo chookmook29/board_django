@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from .models import Message
 from django.contrib import messages
+from .forms import Message_form
 
 def home(request):
 	return render(request, 'index.html', {})
@@ -27,5 +28,12 @@ def about(request):
 
 
 def main(request):
-	all_messages = Message.objects.all
-	return render(request, 'main.html', {'all_messages': all_messages})
+	if request.method == 'POST':
+		form = Message_form(request.POST or None)
+		if form.is_valid():
+			form.save()
+			all_messages = Message.objects.all
+			return render(request, 'main.html', {'all_messages': all_messages})
+	else:
+		all_messages = Message.objects.all
+		return render(request, 'main.html', {'all_messages': all_messages})

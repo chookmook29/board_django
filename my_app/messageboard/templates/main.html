@@ -11,7 +11,14 @@
 			<p>{{ message.text }}</p>
 			<p>{{ message.author }}</p>
 		{% endfor %}
-	{% endif %}	
+	{% endif %}
+	<form method="POST">
+		{% csrf_token %}
+	  <div class="form-group">
+	    <input type="search" class="form-control" aria-describedby="text" placeholder="Enter message" name="text">
+	  </div>
+	  <button type="submit" class="btn btn-primary">Submit message</button>
+	</form>
 	<a href="{% url 'home' %}">Back</a>
 	</div>
 	
